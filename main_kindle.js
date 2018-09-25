@@ -41,8 +41,8 @@ app.get('/', function (req, res) {
 
 app.get('/test', function (req, res) {
     const toto = generateHTML(req.query.var1)
-    res.send(process.env)
-    // res.send(toto)
+    // res.send(process.env)
+    res.send(toto)
     console.log('Voila ma couille')
 })
 
