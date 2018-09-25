@@ -6,6 +6,8 @@ const upload = multer()
 //var upload = multer({ dest: 'uploads/' });
 const app = express()
 
+const port = process.env.PORT || 8080;
+
 //var bodyParser = require('body-parser'); // Charge le middleware de gestion des paramètres
 // var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -16,7 +18,7 @@ function generateHTML (res) {
         error: '',
         successs: ''
     }
-    
+
     if (res === 'salut')
     {
         titi.status = 200
@@ -57,4 +59,4 @@ app.post('/upload', upload.none(), function (req, res, next) {
 
 
 
-app.listen(8080);
+app.listen(port);
