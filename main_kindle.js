@@ -41,7 +41,8 @@ app.get('/', function (req, res) {
 
 app.get('/test', function (req, res) {
     const toto = generateHTML(req.query.var1)
-    res.send(toto)
+    res.send(process.env)
+    // res.send(toto)
     console.log('Voila ma couille')
 })
 
@@ -52,10 +53,6 @@ app.post('/upload', upload.none(), function (req, res, next) {
 })
 //un fichier ne peut pas être passé en GET, qui correspond à l'encodage de texte dans l'URL. On utilise donc POST
 // aller voir https://scotch.io/tutorials/express-file-uploads-with-multer
-
-
-
-
 
 
 
