@@ -10,9 +10,9 @@ const port = process.env.PORT || 8080;
 
 
 app.use(fileUpload())
-app.use(express.static(__dirname + '/public'))
 
-app.get('/', function (req, res) { // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
+app.get('/', function (req, res) {
+    app.use(express.static(__dirname + '/public')) // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
     res.render('page.ejs')
 })
 
