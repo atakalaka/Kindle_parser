@@ -38,13 +38,13 @@ function generateHTML (res) {
 app.use(fileUpload());
 
 app.get('/', function (req, res) {
-    app.use(express.static(__dirname + '/public')); // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
+    console.log(req)
     res.render('page.ejs')
 })
 
-// app.get('/tab', function(req, res) {
-//     var toBeParsed=Notes Sapiens.getElementsByClassName('noteText')
-// })
+app.get('/tab', function(req, res) {
+    document.getElementsByClassName('noteText')
+})
 
 app.get('/test', function (req, res) {
     const toto = generateHTML(req.query.var1)
