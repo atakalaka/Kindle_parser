@@ -1,24 +1,13 @@
 const express = require('express')
 //var session = require('cookie-session');
 const multer = require('multer')
-
 const fs = require('fs')
-
 const fileUpload = require('express-fileupload');
-
-const upload = multer()
-
 const app = express()
-
 const DOMParser = require('dom-parser')
-
 const parser = new DOMParser()
-
 const port = process.env.PORT || 8080;
 
-
-//var bodyParser = require('body-parser'); // Charge le middleware de gestion des paramètres
-// var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 function generateHTML(res) {
     const titi = {
