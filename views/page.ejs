@@ -10,12 +10,15 @@
         <div id="face"></div>
         <h1>Turn your Kindle notes into vocabulary sheets ! </h1>
 
-        <form action="/upload" method="post" enctype="multipart/form-data">
+        <form action="/upload" method="post"  id =form_file_selector" enctype="multipart/form-data">
             <p>
                 <label for="file_link">Select your Kindle notes file </label>
-                <input type="file" name="file_link" id="file_link"  autofocus />
+                <input type="file" name="file_link" id="file_link"  id="notes" autofocus />
+                <span class="tooltip">Your file must be HTML</span>
                 <input type="submit" />
             </p>
         </form>
+        <!--<script src="check_doc_is_html.js"></script>-->
     </body>
 </html>
+

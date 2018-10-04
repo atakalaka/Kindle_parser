@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Premiers tests du CSS</title>
+</head>
+
+
+<body>
+    <header>
+        <p>Le header de la mort</p>
+    </header>
+    <div id="liste_de_navigation">
+        <nav>
+            <ul>
+                <li>
+                    <a href="page1.html">Page 1</a>
+                </li>
+                <li>
+                    <a href="page2.html">Page 2</a>
+                </li>
+                <li>
+                    <a href="page_a_styliser.html">Accueil</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <table>
+        <tr>
+            <th>Titre du film</th>
+            <th>Pour enfants ?</th>
+            <th>Pour adolescents ?</th>
+        </tr>
+        <tr>
+            <td>Massacre à la tronçonneuse</td>
+            <td>Non, trop violent</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>Les bisounours font du ski</td>
+            <td>Oui, adapté</td>
+            <td>Pas assez violent...</td>
+        </tr>
+        <tr>
+            <td>Lucky Luke, seul contre tous</td>
+            <td colspan="2">Pour toute la famille !</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Titre du film</th>
+            <td>Massacre à la tronçonneuse</td>
+            <td>Les bisounours font du ski</td>
+            <td>Lucky Luke, seul contre tous</td>
+        </tr>
+        <tr>
+            <th>Pour enfants ?</th>
+            <td>Non, trop violent</td>
+            <td>Oui, adapté</td>
+            <td rowspan="2">Pour toute la famille !</td>
+        </tr>
+        <tr>
+            <th>Pour adolescents ?</th>
+            <td>Oui</td>
+            <td>Pas assez violent...</td>
+        </tr>
+    </table>
+
+    <h2>section 1</h2>
+    <section>
+        <header>
+            <h2>La section de la saisie</h2>
+        </header>
+
+        <form method="POST" action="reception.js">
+            <fieldset>
+                <legend>première partie des questions</legend>
+                <p class="textbeforeform">Veuillez remplir le formulaire suivant : </p>
+                <label for="last_n" class="labelname">Votre nom : </label>
+                <input type="text" autofocus placeholder="Durand" name="last_name" id="last_n" maxlength="30" />
+                <br />
+                <label for="first_n" class="labelname">Votre prénom : </label>
+                <input type="text" maxlength="30" name="fist_name" placeholder="Robert" id="first_n" />
+                <br />
+                <label>Votre âge : </label>
+                <input type="number" max="140" min="0" step="1" placeholder="18" />
+                <p>
+            </fieldset>
+            Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br />
+            <input type="radio" name="age" value="moins15" id="moins15" /> <label for="moins15">Moins de 15 ans</label><br
+            />
+            <input type="radio" name="age" value="medium15-25" id="medium15-25" /> <label for="medium15-25">15-25 ans</label><br
+            />
+            <input type="radio" name="age" value="medium25-40" id="medium25-40" /> <label for="medium25-40">25-40 ans</label><br
+            />
+            <input type="radio" name="age" value="plus40" id="plus40" /> <label for="plus40">Encore plus vieux que ça ?!
+            </label>
+            </p>
+            <input type="submit">
+        </form>
+    </section>
+    <h2>
+        Section du milieu : (en H2)
+    </h2>
+    <section>
+        <h2>Un titire de l'espace</h2>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable formatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années
+            1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
+            inclusion dans des toutout comblernnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte
+            pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi
+            adapté à la bureautique in portable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de
+            texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est
+            aussi adapté à la bureautique in portable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux
+            de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais
+            s'est aussi adapté à la bureautique in portable ... Enfin pour bouc</p>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce
+            à la vente de feunnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable illes Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+            dans des toutout combler... Enfin pour bouc</p>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce
+            à la vente de feunnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre rtable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable nnées 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique in portable illes Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+            dans des toutout combler... Enfin pour bouc</p>
+        <p>
+            <img src='mini_photoid.jpg' alt="photo de moi" class="imageflottante" /> blabla qui est là pour anticonstitutionnellement
+            pour combler... Enfin pour boucher le vide quoi. Je me comprends du blabla qui est là pour combler pour combler...
+            Enfin pour boucher le vide quoi. Je me comprends du blabla qui est là pour combler pour comble me comprends du
+            blabla qui est là pour combler pour t simplement du faux texte employé dans la composition et la mise en page
+            avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un
+            imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
+            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son
+            contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant
+            des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans dest simplement du faux texte employé
+            dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+            depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+            spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique
+            informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente
+            de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans dest simplement
+            du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+            standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de
+            texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est
+            aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans
+            les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment,
+            par son inclusion dans dest simplement du faux texte employé dans la composition et la mise en page avant impression.
+            Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+            assembla ensemble des morceaux de texte pour.
+        </p>
+        <p>
+            Un paragraphe pour rien. azerty xxxx xx x.Un paragraphe pour rien. azerty xxxx xx x. Un paragraphe pour rien. azerty xxxx
+            xx x. Un paragraphe pour rien. azerty xxxx xx x. Un paragraphe pour rien. azerty xxxx xx x.
+        </p>
+    </section>
+    <h2>Dernière section</h2>
+    <section>
+        <p>
+            <img src='mini_photoid.jpg' alt="photo de moi" class="imageflottante" /> blabla qui est là pour anticonstitutionnellement
+            pour combler... Enfin pour boucher le vide quoi. Je me comprends du blabla qui est là pour combler pour combler...
+            Enfin pour boucher le vide quoi. Je me comprends du blabla qui est là pour combler pour comble me comprends du
+            blabla qui est là pour combler pour t simplement du faux texte employé dans la composition et la mise en page
+            avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un
+            imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
+            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son
+            contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant
+            des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans dest simplement du faux texte employé
+            dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+            depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+            spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique
+            informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente
+            de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans dest simplement
+            du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+            standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de
+            texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est
+            aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans
+            les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment,
+            par son inclusion dans dest simplement du faux texte employé dans la composition et la mise en page avant impression.
+            Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+            assembla ensemble des morceaux de texte pour réaliser un livre spffffffffffffffffffffffffffffffffffaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrcccccccccccccccccccccccccccccceeeeeeeeeeeeeeeeeeeeeeeeeee
+            écimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique
+            informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente
+            de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des toutout
+            combler... Enfin pour boucher le vide quoi. Je me comprends du blabla qui est là pour combler pour combler...
+            Enfin pour boucher le vide quoi. Je me comprends</p>
+
+        <h3>Du texte intéressant en h3</h3>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce
+            à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+            dans des toutout combler... Enfin pour bouc</p>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce
+            à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+            dans des toutout combler... Enfin pour bouc</p>
+        <p>du blabla ie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
+            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la
+            bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce
+            à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+            dans des toutout combler... Enfin pour bouc</p>
+
+    </section>
+
+    <a title="lien vers page 2" href="page2.html"> lien vers la page 2</a>
+</body>
+
+</html>
