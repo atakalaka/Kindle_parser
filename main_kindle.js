@@ -56,37 +56,35 @@ app.post('/parsed', function (req, res) {
     // console.log(__dirname + '/Notes-unparsed/' + 'Notes Sapiens.html')
     var all_note_files = fs.readdirSync(__dirname + '/Notes-unparsed/');
     // for (var i = 0; i < all_note_files.length; i++) {
-        // console.log(all_note_files[i])
+    // console.log(all_note_files[i])
     // }
 
-    all_note_files.forEach(function (elem) {
-        fs.readFile(__dirname + '/Notes-unparsed/' + elem, 'utf8', function (err, data) {
+    var vocab = [];
+    var quotes = [];
+    all_note_files.forEach(function (file_on_server) {
+        fs.readFile(__dirname + '/Notes-unparsed/' + file_on_server, 'utf8', function (err, data) {
             if (err) throw err;
 
             //transformer le texte en objet html
             const valueHTML = parser.parseFromString(data);
             const tab = valueHTML.getElementsByClassName("noteText");
-            var vocab = tab
-            var quotes = []
-            for (i = 0; i < vocab.length; i++) {
-                // si la note fait plus de 5 mots, on considère que c'est une citation
-                if (vocab[i].innerHTML.split(" ").length > 5) {
-                    quotes.push(vocab[i])
-                    vocab.splice(i, 1);
-                    i--
+            if (tab.length !== 0) { //si on ne trouve pas de noteText, on passe au fichier suivant
+                vocab = tab;
+                quotes = [];
+                for (i = 0; i < vocab.length; i++) {
+                    // si la note fait plus de 5 mots, on considère que c'est une citation
+                    if (vocab[i].innerHTML.split(" ").length > 5) {
+                        quotes.push(vocab[i])
+                        vocab.splice(i, 1);
+                        i--
+                    }
                 }
-            }
-            /*for (i = 0; i < vocab.length; i++){
-                console.log("vocab[" + i + "].innerHTML : " + vocab[i].innerHTML)
-            }
-            for (i = 0; i < quotes.length; i++){
-                console.log("quotes[" + i + "].innerHTML : " + quotes[i].innerHTML)
-            }*/
-            res.status(200);
-            res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab });
-        });
-    })
 
+            }
+        });
+    }); 
+    res.status(200);
+    res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab });
 })
 
 
