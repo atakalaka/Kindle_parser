@@ -7,7 +7,6 @@ const DOMParser = require('dom-parser')
 const parser = new DOMParser()
 const port = process.env.PORT || 8080;
 
-
 //app.use(session({secret: 'todotopsecret'}));
 
 app.use(fileUpload());
@@ -19,8 +18,6 @@ app.get('/', function (req, res) {
 
 
 app.post('/upload', function (req, res) {
-    // var vocab = {};
-    // var quotes = [];
     if (!req.files) {
         return res.status(400).send('No files were uploaded.');
     }
@@ -30,15 +27,15 @@ app.post('/upload', function (req, res) {
         if (err) {
             return res.status(500).send(err);
         }
-        // res.render('fileuploaded.ejs');
     })
 
     fs.readFile(__dirname + '/Notes-unparsed/' + sampleFile.name, 'utf8', function (err, data) {
         if (err) throw err;
         //transformer le texte en objet html
         const valueHTML = parser.parseFromString(data);
-        const tab = valueHTML.getElementsByClassName("noteText");
-        var vocab = tab;
+        const tab_words = valueHTML.getElementsByClassName("noteText");
+        const title = valueHTML.getElementsByClassName("bookTitle"); //charge le titre du livre 
+        var vocab = tab_words;
         var quotes = [];
         for (let j = 0; j < vocab.length; j++) {
             // si la note fait plus de 5 mots, on considère que c'est une citation
@@ -49,7 +46,7 @@ app.post('/upload', function (req, res) {
             }
         }
         res.status(200);
-        res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab });
+        res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab, titleejs: title });
     })
 })
 

@@ -7,7 +7,9 @@
         </head>
 
     <body>
-        <h1>Your vocabulary list :  </h1>
+    <h1> <%= titleejs[0].innerHTML %> </h1>
+        
+        <h2>Your vocabulary list :  </h2>
         <ul>
             <% for (var k=0, len = vocabejs.length ; k<len ; k++) { %>
                 <li> 
@@ -17,7 +19,7 @@
 
         </ul>
         <br/>
-        <h1>Your quotes :  </h1>
+        <h2>Your quotes :  </h2>
         <ul>
             <% for (var k=0, len = quotesejs.length ; k<len ; k++) { %>
                 <li> 
