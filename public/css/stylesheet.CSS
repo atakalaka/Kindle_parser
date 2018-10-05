@@ -7,14 +7,19 @@ body {                              /* ICI je met du style au body*/
     border-style: double; 
     border-width: 10px; 
     border-color: black; 
-    width: calc(100vw - 20px);      /* ICI je met la taille en grand en prenant en compte les bordur  (10 px * 2)*/
-    height: calc(100vh - 20px);     /* ICI je met la taille en grand en prenant en compte les bordur  (10 px * 2)*/
-    margin: 0px;
+    width: 95%;      /* ICI je met la taille en grand en prenant en compte les bordur  (10 px * 2)*/
+    height: 95%;     /* ICI je met la taille en grand en prenant en compte les bordur  (10 px * 2)*/
+    margin: 5px;
+    padding: 10px; 
     text-align: center;
 }
 
 body > h1 {                         /* ICI je met une marge en bas de l'element h1 contenu dans le parent body*/
     margin-bottom: 65px;
+}
+
+ul {
+    text-align: left; 
 }
 
 div#face {                          /* ICI je met du css pour une div qui a un id egale a face*/
