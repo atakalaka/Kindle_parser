@@ -38,8 +38,8 @@ app.post('/upload', function (req, res) {
         var vocab = tab_words;
         var quotes = [];
         for (let j = 0; j < vocab.length; j++) {
-            // si la note fait plus de 5 mots, on considère que c'est une citation
-            if (vocab[j].innerHTML.split(" ").length > 5) {
+            // si la note fait plus de 6 mots, on considère que c'est une citation
+            if (vocab[j].innerHTML.split(" ").length > 6) {
                 quotes.push(vocab[j])
                 vocab.splice(j, 1);
                 j--
