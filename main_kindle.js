@@ -1,12 +1,13 @@
 const express = require('express')
-const multer = require('multer')
+//var session = require('cookie-session');
+const fs = require('fs')
 const fileUpload = require('express-fileupload');
-const upload = multer()
 const app = express()
+const DOMParser = require('dom-parser')
+const parser = new DOMParser()
 const port = process.env.PORT || 8080;
 
-
-
+//app.use(session({secret: 'todotopsecret'}));
 
 
 app.use(fileUpload())
@@ -14,25 +15,43 @@ app.use(express.static(__dirname + '/public'))
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    console.log(__dirname)
-    console.log(__dirname + '/public') // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
-    res.render('page.ejs')
+
+    app.use(express.static(__dirname + '/public')); // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
+    res.render('page.ejs') //page.ejs renvoie sur /upload
 })
 
-app.get('/test', function (req, res) {
-    res.send(req.query.var1)
-    console.log('Voila ma couille')
-})
 
-app.post('/upload', function(req, res) {
-    if (!req.files)
-        return res.status(400).send('No files were uploaded.')
-    let sampleFile = req.files.sampleFile
-    console.log(__dirname)
-    sampleFile.mv(__dirname + '/Notes-unparsed/' + req.files.sampleFile.name, function(err) {
-     if (err)
-        return res.status(500).send(err)
-        res.send('File uploaded!')
+app.post('/upload', function (req, res) {
+    if (!req.files) {
+        return res.status(400).send('No files were uploaded.');
+    }
+    let sampleFile = req.files.file_link;
+    // Use the mv() method to place the file somewhere on your server
+    sampleFile.mv(__dirname + '/Notes-unparsed/' + sampleFile.name, function (err) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+    })
+
+    fs.readFile(__dirname + '/Notes-unparsed/' + sampleFile.name, 'utf8', function (err, data) {
+        if (err) throw err;
+        //transformer le texte en objet html
+        const valueHTML = parser.parseFromString(data);
+        const tab_words = valueHTML.getElementsByClassName("noteText");
+        const title = valueHTML.getElementsByClassName("bookTitle"); //charge le titre du livre 
+        var vocab = tab_words;
+        var quotes = [];
+        for (let j = 0; j < vocab.length; j++) {
+            // si la note fait plus de 6 mots, on considère que c'est une citation
+            if (vocab[j].innerHTML.split(" ").length > 6) {
+                quotes.push(vocab[j])
+                vocab.splice(j, 1);
+                j--
+            }
+        }
+        res.status(200);
+        res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab, titleejs: title });
+
     })
 })
 

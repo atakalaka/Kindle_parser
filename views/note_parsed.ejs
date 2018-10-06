@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Kindle parser</title>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+        </head>
+
+    <body>
+    <h1> <%= titleejs[0].innerHTML %> </h1>
+        
+        <h2>Your vocabulary list :  </h2>
+        <ul>
+            <% for (var k=0, len = vocabejs.length ; k<len ; k++) { %>
+                <li> 
+                    <%= vocabejs[k].innerHTML %> 
+                </li>
+            <% } %>
+
+        </ul>
+        <br/>
+        <h2>Your quotes :  </h2>
+        <ul>
+            <% for (var k=0, len = quotesejs.length ; k<len ; k++) { %>
+                <li> 
+                    <%= quotesejs[k].innerHTML %> 
+                </li>
+            <% } %>
+
+        </ul>
+    </body>
+</html>
