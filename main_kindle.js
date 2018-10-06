@@ -9,9 +9,13 @@ const port = process.env.PORT || 8080;
 
 //app.use(session({secret: 'todotopsecret'}));
 
-app.use(fileUpload());
+
+app.use(fileUpload())
+app.use(express.static(__dirname + '/public'))
+console.log(__dirname)
 
 app.get('/', function (req, res) {
+
     app.use(express.static(__dirname + '/public')); // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
     res.render('page.ejs') //page.ejs renvoie sur /upload
 })
@@ -47,6 +51,7 @@ app.post('/upload', function (req, res) {
         }
         res.status(200);
         res.render('note_parsed.ejs', { quotesejs: quotes, vocabejs: vocab, titleejs: title });
+
     })
 })
 
