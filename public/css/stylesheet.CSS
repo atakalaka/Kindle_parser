@@ -26,6 +26,16 @@ ul {
     text-align: justify; 
 }
 
+table {
+    border-collapse: collapse;
+    width: 80%; 
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: justify
+}
+
 div#face {                          /* ICI je met du css pour une div qui a un id egale a face*/
     width: 400px;
     height: 400px;
