@@ -1,18 +1,23 @@
 const express = require('express')
-//var session = require('cookie-session');
+const path = require('path')
 const fs = require('fs')
 const fileUpload = require('express-fileupload');
 const app = express()
 const DOMParser = require('dom-parser')
 const parser = new DOMParser()
 const port = process.env.PORT || 8080;
+//var session = require('cookie-session');
+// const lib = require('./server/module') //code de Gautier
 
 //app.use(session({secret: 'todotopsecret'}));
 
-app.use(fileUpload());
+app.set('view engine', 'ejs') //permet de ne pas ecrire l'extension "ejs"
 
+app.use(fileUpload());
+app.use('/assets', express.static('public')) //crée un alias de public qui permet d'aller chercher dans public avec les doc ejs
+
+// Routes
 app.get('/', function (req, res) {
-    app.use(express.static(__dirname + '/public')); // ajouter app use pour dire ou se trouve les static de la page. Ici on vas chercher dans le dossier public
     res.render('page.ejs') //page.ejs renvoie sur /upload
 })
 
@@ -21,7 +26,6 @@ app.post('/upload', function (req, res) {
         return res.status(400).send('No files were uploaded.');
     }
     let sampleFile = req.files.file_link;
-    // Use the mv() method to place the file somewhere on your server
 
     if (sampleFile) {
         sampleFile.mv(__dirname + '/Notes-unparsed/' + sampleFile.name, function (err) {
@@ -59,8 +63,8 @@ app.post('/upload', function (req, res) {
     }
 })
 
-app.get('*', function(req, res){
+app.get('*', function (req, res) {
     res.status(404).render('404notfound.ejs')
-  });
+});
 
 app.listen(port);
