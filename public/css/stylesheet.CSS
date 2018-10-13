@@ -26,6 +26,7 @@ ul {
     text-align: justify; 
 }
 
+
 table {
     border-collapse: collapse;
     width: 80%; 
@@ -44,6 +45,7 @@ table, th, td {
     padding: 2%;
     text-align: justify
 }
+
 
 div#face {                          /* ICI je met du css pour une div qui a un id egale a face*/
     width: 400px;

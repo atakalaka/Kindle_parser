@@ -7,6 +7,7 @@ let notes = document.getElementById("notes"),
 function checktype(elem, type) {
     var lastNamecomment = elem.target.nextElementSibling;
     if (elem.target.value.type != 'file') {
+
         elem.target.style.color = 'red';
         lastNamecomment.style.visibility = 'visible';
     } else {

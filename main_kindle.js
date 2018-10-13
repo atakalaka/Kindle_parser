@@ -16,10 +16,12 @@ app.set('view engine', 'ejs') //permet de ne pas ecrire l'extension "ejs"
 app.use(fileUpload());
 app.use('/assets', express.static('public')) //crée un alias de public qui permet d'aller chercher dans public avec les doc ejs
 
+
 // Routes
 app.get('/', function (req, res) {
     res.render('page.ejs') //page.ejs renvoie sur /upload
 })
+
 
 app.post('/upload', function (req, res) {
     if (!req.files) {
@@ -66,5 +68,6 @@ app.post('/upload', function (req, res) {
 app.get('*', function (req, res) {
     res.status(404).render('404notfound.ejs')
 });
+
 
 app.listen(port);
