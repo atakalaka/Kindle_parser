@@ -28,6 +28,7 @@ app.post('/upload', function (req, res) {
         return res.status(400).send('No files were uploaded.');
     }
     let sampleFile = req.files.file_link;
+    console.log(sampleFile);
 
     if (sampleFile) {
         sampleFile.mv(__dirname + '/Notes-unparsed/' + sampleFile.name, function (err) {
@@ -37,7 +38,10 @@ app.post('/upload', function (req, res) {
         })
 
         fs.readFile(__dirname + '/Notes-unparsed/' + sampleFile.name, 'utf8', function (err, data) {
-            if (err) { return res.status(400).send("No files found on the server") }
+            if (err) { 
+                console.log (err) 
+                return res.status(400).send("No files found on the server") 
+            }
             //transformer le texte en objet html
             const valueHTML = parser.parseFromString(data);
             const tab_words = valueHTML.getElementsByClassName("noteText");
@@ -47,7 +51,8 @@ app.post('/upload', function (req, res) {
             for (let j = 0; j < vocab.length; j++) {
                 // si la note fait plus de 6 mots, on considère que c'est une citation
                 if (vocab[j].innerHTML.split(" ").length > 6) {
-                    quotes.push(vocab[j])
+                    // console.log(typeof vocab[j])
+                    quotes.push(vocab[j]);  //String(vocab[j]).replace(',', "")
                     vocab.splice(j, 1);
                     j--
                 }
