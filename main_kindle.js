@@ -5,7 +5,7 @@ const fileUpload = require('express-fileupload');
 const app = express()
 const DOMParser = require('dom-parser')
 const parser = new DOMParser()
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8088;
 //var session = require('cookie-session');
 // const lib = require('./server/module') //code de Gautier
 
